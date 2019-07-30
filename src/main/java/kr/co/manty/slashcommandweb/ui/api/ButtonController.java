@@ -22,7 +22,7 @@ public class ButtonController {
     }
 
     @PostMapping("/slash/button")
-    public SlashCommandResponse button(SlashCommandRequest request) {
+    public SlashCommandResponse button(@RequestBody SlashCommandRequest request) {
         log.info( request.toString() );
         return buildSlashCommandResponse(String.format("Button Message (%d)", count.incrementAndGet()), false);
     }
